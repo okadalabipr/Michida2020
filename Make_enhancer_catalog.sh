@@ -16,7 +16,6 @@ SE_catalog="path to SE catalog you are making with this script"
 TE_catalog="path to TE catalog you are making with this script"
 
 #2 tmp BED files are required. Please specify.
-
 tmp1="path to tmp file 1"
 tmp2="path to tmp file 2"
 

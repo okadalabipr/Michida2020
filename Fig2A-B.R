@@ -2,14 +2,14 @@ library(ggplot2)
 library(tidyverse)
 library(pals)
 #This code is assuming you specified Tag Directories in H3K27Ac_ctrl, H3K27Ac_IgM, 
-#RelA_ctrl, RelA_IgM, ATAC_ctrl, ATAC_IgM order at annotatePeaks.pl in Get_signal_for_Fig1D.sh.
+#RelA_ctrl, RelA_IgM, ATAC_ctrl, ATAC_IgM order at annotatePeaks.pl in Get_signal.sh.
 
-SE <- read.csv("path to your signal intensity in SE catalog obtained with Get_signal_for_Fig1D.sh", 
+SE <- read.csv("path to your signal intensity in SE catalog obtained with Get_signal.sh",
                sep = "\t", stringsAsFactors = F)[,c(1:4,20:25)]
 
 colnames(SE) <- c("ID","chr","start","end","H3K27Ac_0H","H3K27Ac_1H","RelA_0H","RelA_1H","ATAC_0H","ATAC_1H")
 
-TE <- read.csv("path to your signal intensity in TE catalog obtained with Get_signal_for_Fig1D.sh", 
+TE <- read.csv("path to your signal intensity in TE catalog obtained with Get_signal.sh",
                sep = "\t", stringsAsFactors = F)[,c(1:4,20:25)]
 
 colnames(TE) <- c("ID","chr","start","end","H3K27Ac_0H","H3K27Ac_1H","RelA_0H","RelA_1H","ATAC_0H","ATAC_1H")
@@ -53,6 +53,10 @@ TE = dplyr::arrange(TE, desc(H3K27Ac_FC))
 
 SE$N = seq(1,nrow(SE),1)
 TE$N = seq(1,nrow(TE),1)
+
+#These files are needed for gene_assingment.R. Please specify path you like.
+write.csv(SE,"SE_3classified.csv", row.names = F)
+write.csv(TE,"TE_3classified.csv", row.names = F)
 
 #Fig.2A--------------------------------------------------------------------------------------
 #Fig.2A (SE)
