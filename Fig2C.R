@@ -34,6 +34,13 @@ RNA_seq <- dplyr::filter(RNA_seq, !is.na(type))
 
 RNA_seq <- RNA_seq[,c(1,3,7,11,15,18)]
 
+#Save genes which were assigned to signal gained enhancers (Used later analysis)
+a <- RNA_seq[which(grepl("SE_sg",RNA_seq$type)),]
+write.csv(a,"SE_sg_genes.csv", row.names = F)
+
+b <- RNA_seq[which(grepl("TE_sg",RNA_seq$type)),]
+write.csv(b,"TE_sg_genes.csv", row.names = F)
+
 #Calculate mean values
 #sg: signal gained, su: signal unchanged, sl: siganl lost
 log2FC_mean_SE_sg <- c(0,apply(RNA_seq[which(grepl("SE_sg",RNA_seq$type)),2:5],2,mean))
