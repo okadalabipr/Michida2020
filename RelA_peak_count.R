@@ -1,4 +1,3 @@
-setwd("E:/working_directory/peak_count")
 library(tidyverse)
 
 RelA_peaks <- as.data.frame(read.table("path to your RelA peaks in ATAC peaks obtained using Get_RelA_peaks_in_ATAC_peaks.sh")[,1:3])
