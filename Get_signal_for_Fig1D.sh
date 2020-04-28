@@ -2,8 +2,8 @@
 
 #To get signal intensity used in Fig.1D, annotatePeaks.pl of HOMER was used.
 
-SE_catalog="path to your catalog of SE (BED format)"
-TE_catalog="path to your catalog of TE (BED format)"
+SE_catalog="path to your SE catalog (BED format)"
+TE_catalog="path to your TE catalog (BED format)"
 
 H3K27Ac_TagDir_ctrl="path to your Tag Directory of H3K27Ac ChIP-seq data in anti-IgM 000 min condition"
 H3K27Ac_TagDir_IgM="path to your Tag Directory of H3K27Ac ChIP-seq data in anti-IgM 060 min condition"
