@@ -11,7 +11,7 @@ assigned <- read.csv("path to your SE_TE_3classified_assigned.csv obtained with 
 assigned$RelA_mean <- (assigned$RelA_0H + assigned$RelA_1H)/2
 
 #Replace label, "group" of RelA enriched TEs
-#RE means "RelA enriched"
+#"RE" means "RelA enriched"
 for(i in (length(which(grepl("SE",assigned$group))) + 1): nrow(assigned)){
   if(assigned$RelA_mean[i] >= 1){                                       
     if(assigned$group[i] == "TE_sg") assigned$group[i] = "RE_TE_sg"
