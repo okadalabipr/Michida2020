@@ -121,7 +121,7 @@ TPM_mean <- data.frame(geneid = TPM$Geneid, Length = TPM$Length, TPM_0 = TPM_mea
                        TPM_1 = TPM_mean_1, TPM_10 = TPM_mean_10)
 
 #Join peak count data and motif count data--------------------------------------------------------------------------
-#These four files are obtained using RelA_peak_motif_count.R. Please specify path depending on your environment.
+#These four files are obtained using RelA_peak_motif_count.R. Please specify their path depending on your environment.
 SE_sg_peak <- read.csv("SE_sg_peak_count.csv",stringsAsFactors = F)
 SE_sg_motif <- read.csv("SE_sg_motif_count.csv", stringsAsFactors = F)
 TE_sg_peak <- read.csv("TE_sg_peak_count.csv",stringsAsFactors = F)

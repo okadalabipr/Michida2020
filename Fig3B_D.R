@@ -1,8 +1,7 @@
-setwd("C:/Users/Michida/Desktop/tmp/wd")
-library(ggplot2)
 library(tidyverse)
 library(optimx)
 
+#These two files are obtained using Filtering_genes.R. Please specify their path depending on your environment.
 SE <- read.csv("filtered_Gained_SE.csv",stringsAsFactors = F)
 TE <- read.csv("filtered_Gained_TE.csv",stringsAsFactors = F)
 
