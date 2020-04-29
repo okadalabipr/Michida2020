@@ -1,10 +1,9 @@
-setwd("E:/working_directory/motif_count")
 library(tidyverse)
 library(ggplot2)
 
-motif_tbl <- read.table("output.txt",header=T, stringsAsFactors=F, sep="\t")
+motif_tbl <- read.table("path to your findMotigsGenome.pl output file",header=T, stringsAsFactors=F, sep="\t")
 
-peak_tbl <- read.table("extended_igm1.hb")[,1:4]
+peak_tbl <- read.table("path to HOMER BED file used as the motif search region in findMotifsGenome.pl")[,1:4]
 
 colnames(peak_tbl) <- c("PositionID","chr","start","end")
 
@@ -45,4 +44,4 @@ motif_in_peak <- rbind(motif_in_peak_positive,motif_in_peak_negative)
 motif_in_peak$motif_s = floor(motif_in_peak$motif_s) + 1
 motif_in_peak$motif_e = floor(motif_in_peak$motif_e) + 1
 
-write.table(motif_in_peak[,c(2,13,14)],"NFkB_motifs_position.bed",quote = F, row.names = F, sep = "\t", col.names = F)
+write.table(motif_in_peak[,c(2,13,14)],"path to output file (BED format)",quote = F, row.names = F, sep = "\t", col.names = F)
