@@ -103,7 +103,7 @@ for(i in 1:length(SUM)){
 
 rownames(TPM) <- seq(1,nrow(TPM),1)
 
-#write.table(TPM,"cleaned_TPM.txt",row.names = F,quote = F, sep = "\t") #This file is required for downstream analysis.
+write.table(TPM,"cleaned_TPM.txt",row.names = F,quote = F, sep = "\t") #This file is required for downstream analysis.
 
 
 TPM_mean_0 <- TPM[,2:max(grep("^IgM_00000_*", colnames(TPM)))] %>% rowMeans()
