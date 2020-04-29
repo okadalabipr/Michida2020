@@ -94,5 +94,5 @@ df_TE_sg <- dplyr::left_join(TE_sg,RamDA_TE_sg,by = "gene")
 #If you counted RelA ChIP-seq peaks
 write.csv(df_TE_sg,"TE_sg_peak_count.csv",row.names = F) #This file is required in downstream analysis.
 #If you counted NFkB motifs
-write.csv(df_SE_sg,"TE_sg_motif_count.csv",row.names = F) #This file is required in downstream analysis.
+write.csv(df_TE_sg,"TE_sg_motif_count.csv",row.names = F) #This file is required in downstream analysis.
 
