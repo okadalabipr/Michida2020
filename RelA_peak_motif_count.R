@@ -1,7 +1,11 @@
 library(tidyverse)
 
-RelA_peaks <- as.data.frame(read.table("path to your RelA peaks in ATAC peaks obtained using Get_RelA_peaks_in_ATAC_peaks.sh")[,1:3])
-colnames(RelA_peaks) <- c("chr","start","end")
+#If you are counting RelA ChIP-seq peaks
+peaks <- as.data.frame(read.table("path to your RelA peaks in ATAC peaks obtained using Get_peaks_in_ATAC_peaks.sh")[,1:3])
+#If you are counting NFkB motifs
+peaks <- as.data.frame(read.table("path to your NFkB motifs in ATAC peaks obtained using Get_NFkB_motifs_in_enhancers.sh and Get_motif_position.R")[,1:3])
+
+colnames(peaks) <- c("chr","start","end")
 
 Enhancers <- read.csv("path to your SE_TE_3classified_assigned.csv obtained with gene_assignment.R",stringsAsFactors = F)
 
@@ -14,7 +18,7 @@ SE_sg <- NULL
 for (c in chr){
   En_chr = dplyr::filter(Enhancers, group == "SE_sg" & chr == c)
   if (nrow(En_chr) != 0){
-    peak_chr = dplyr::filter(RelA_peaks, chr == c)
+    peak_chr = dplyr::filter(peaks, chr == c)
     v = c()
     for (i in 1:nrow(En_chr)){
       peak_num = length(which(peak_chr$end >= En_chr$start[i] & En_chr$end[i] >= peak_chr$start))
@@ -25,6 +29,7 @@ for (c in chr){
   }
 }
 
+#DO NOT execute if you are counting NFkB motifs!!!!
 SE_sg <- dplyr::filter(SE_sg, peak_num > 0) #Discard peaks which doesn't have RelA peaks.
 
 #Count peaks in signal-gained TE-------------------------------------------------------------------------------------
@@ -32,7 +37,7 @@ TE_sg <- NULL
 for (c in chr){
   En_chr = dplyr::filter(Enhancers, group == "TE_sg" & chr == c)
   if (nrow(En_chr) != 0){
-    peak_chr = dplyr::filter(RelA_peaks, chr == c)
+    peak_chr = dplyr::filter(peaks, chr == c)
     v = c()
     for (i in 1:nrow(En_chr)){
       peak_num = length(which(peak_chr$end >= En_chr$start[i] & En_chr$end[i] >= peak_chr$start))
@@ -43,9 +48,11 @@ for (c in chr){
   }
 }
 
+
+#DO NOT execute if you are counting NFkB motifs!!!!
 TE_sg <- dplyr::filter(TE_sg, peak_num > 0) #Discard peaks which doesn't have RelA peaks.
 
-#Extract enhancers whose target genes' expression data are exist in RNA-seq data-------------------------------------
+#Extract enhancers whose target genes' expression data exist in RNA-seq data-------------------------------------
 #signal-gained SE
 RamDA_SE_sg = read.csv("path to your SE_sg_genes.csv obtaind using Fig2C.R",stringsAsFactors = F)
 
@@ -63,7 +70,10 @@ colnames(SE_sg)[17] <- "gene"
 
 df_SE_sg <- dplyr::left_join(SE_sg,RamDA_SE_sg,by = "gene")
 
+#If you counted RelA ChIP-seq peaks
 write.csv(df_SE_sg,"SE_sg_peak_count.csv",row.names = F) #This file is required in downstream analysis.
+#If you counted NFkB motifs
+write.csv(df_SE_sg,"SE_sg_motif_count.csv",row.names = F) #This file is required in downstream analysis.
 
 #signal-gained TE
 RamDA_TE_sg = read.csv("path to your TE_sg_genes.csv obtaind using Fig2C.R",stringsAsFactors = F)
@@ -81,4 +91,8 @@ colnames(TE_sg)[17] <- "gene"
 
 df_TE_sg <- dplyr::left_join(TE_sg,RamDA_TE_sg,by = "gene")
 
+#If you counted RelA ChIP-seq peaks
 write.csv(df_TE_sg,"TE_sg_peak_count.csv",row.names = F) #This file is required in downstream analysis.
+#If you counted NFkB motifs
+write.csv(df_SE_sg,"TE_sg_motif_count.csv",row.names = F) #This file is required in downstream analysis.
+
