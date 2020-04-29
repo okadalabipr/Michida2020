@@ -1,4 +1,3 @@
-setwd("C:/Users/Michida/Desktop/tmp/wd/PU_1_motif")
 library(tidyverse)
 library(ggplot2)
 library(optimx)
