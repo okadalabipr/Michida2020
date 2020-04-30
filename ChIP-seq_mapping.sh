@@ -25,5 +25,8 @@ samtools view -@ 4 -b -F 4 ${save_dir}/mapped_sorted.bam > ${save_dir}/mapped_so
 #Remove duplicates with picard
 picard MarkDuplicates I=${save_dir}/mapped_sorted_rm_unmapped.bam O=${save_dir}/all_done.bam M=${save_dir}/report.txt REMOVE_DUPLICATES=true
 
+#Make index
+samtools index -@ 4 ${save_dir}/all_done.bam
+
 #Remove intermediate files
 rm -rf ${save_dir}/mapped.sam ${save_dir}/mapped.bam ${save_dir}/mapped_sorted.bam ${save_dir}/mapped_sorted_rm_unmapped.bam

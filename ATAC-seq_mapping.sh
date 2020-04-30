@@ -30,6 +30,9 @@ picard MarkDuplicates I=${save_dir}/mapped_sorted.bam O=${save_dir}/mapped_sorte
 #Extract signle mapped reads with samtools (This command was not run in single-cell ATAC-seq processing.)
 samtools view -@ 4 -b -q 30 ${save_dir}/mapped_sorted_rm_dups.bam > ${save_dir}/all_done.bam
 
+#Make index
+samtools index -@ 4 ${save_dir}/all_done.bam
+
 #Remove intermediate files
 rm -rf ${save_dir}/unpaired_R1.fastq ${save_dir}/unpaired_R2.fastq ${save_dir}/mapped.sam \
 ${save_dir}/mapped.bam ${save_dir}/mapped_sorted.bam ${save_dir}/mapped_sorted_rm_dups.bam
