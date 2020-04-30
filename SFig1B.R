@@ -1,4 +1,5 @@
 library(ggplot2)
+library(tidyverse)
 
 tss <- read.table("path to your table of signal intensity in TSSs obtained with Get_signal.sh", 
                   header=T, stringsAsFactors=F, sep="\t", quote="", comment.char = "") 
