@@ -27,7 +27,7 @@ samtools sort -@ 4 ${save_dir}/mapped.bam -o ${save_dir}/mapped_sorted.bam
 #Remove duplicates with picard
 picard MarkDuplicates I=${save_dir}/mapped_sorted.bam O=${save_dir}/mapped_sorted_rm_dups.bam M=${save_dir}/report.txt REMOVE_DUPLICATES=true
 
-#Extract signle mapped reads with samtools
+#Extract signle mapped reads with samtools (This command was not run in single-cell ATAC-seq processing.)
 samtools view -@ 4 -b -q 30 ${save_dir}/mapped_sorted_rm_dups.bam > ${save_dir}/all_done.bam
 
 #Remove intermediate files

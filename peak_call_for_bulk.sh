@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#RelA ChIP-seq of anti-IgM 000 min
+RelA_ctrl_bam="path to ypur bam file of RelA ChIP-seq of anti-IgM 000 min condition"
+RelA_ctrl_out="path to the output directory for RelA ChIP-seq of anti-IgM 000 min peak call"
+macs2 callpeak -f BAM -t ${RelA_ctrl_bam} -g mm --outdir ${RelA_ctrl_out} -n RelA_ctrl
+cat ${RelA_ctrl_out}/RelA_ctrl_peaks.xls | grep -v '^#' | sed '/^$/d' | sed '1d' | awk -v 'OFS=\t' '{print $1, $2, $3}' > ${RelA_ctrl_out}/RelA_ctrl_peaks.bed #Convert peak.xls into BED format
+
 #RelA ChIP-seq of anti-IgM 060 min
 RelA_IgM_bam="path to ypur bam file of RelA ChIP-seq of anti-IgM 060 min condition"
 RelA_IgM_out="path to the output directory for RelA ChIP-seq of anti-IgM 060 min peak call"
