@@ -51,15 +51,16 @@ if __name__ == '__main__':
         params_se = np.empty((n, 4))
         params_te = np.empty((n, 4))
         for i in range(n):
+            sys.stdout.write('\r{:d} / {:d}'.format(i + 1, n))
+
             result_se = differential_evolution(
-                objective_se, bounds, polish=True
+                objective_se, bounds, strategy='best1bin', polish=True
             )
             result_te = differential_evolution(
-                objective_te, bounds, polish=True
+                objective_te, bounds, strategy='best1bin', polish=True
             )
             params_se[i, :] = result_se.x
             params_te[i, :] = result_te.x
-            sys.stdout.write('\r%d/%d' % (i + 1, n))
         np.save('params_se.npy', params_se)
         np.save('params_te.npy', params_te)
     else:
@@ -67,6 +68,7 @@ if __name__ == '__main__':
         params_te = np.load('params_te.npy')
 
     os.makedirs('./Fig3E', exist_ok=True)
+
     """N
     """
     my_rc_params()
