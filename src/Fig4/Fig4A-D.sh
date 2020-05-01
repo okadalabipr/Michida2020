@@ -4,7 +4,7 @@ Enhancer="path to your BED file of SE catalog or TE catalog made by Make_enhance
 
 #Control
 ATAC_ctrl="path to your extended ATAC-seq peaks (BED format) in anti-IgM 000 min condition made by peak_call_for_bulk.sh and Extend_bulk_ATAC_peaks.R"
-RelA_ctrl="path to your RelA ChIP-seq peaks (BED format) in anti-IgM 000 min condition made by peak_call_bulk.sh"
+RelA_ctrl="path to your RelA ChIP-seq peaks (BED format) in anti-IgM 000 min condition made by Peak_call_bulk.sh"
 
 ATAC_in_Enhancer_ctrl="path to output of below command"
 intersectBed -a ${Enhancer} -b ${ATAC_ctrl} > ${ATAC_in_Enhancer_ctrl} #Get ATAC-seq peaks in enhancer region
@@ -20,7 +20,7 @@ bed2pos.pl ${RelA_ATAC_in_Enhancer_ctrl} > ${RelA_ATAC_in_Enhancer_ctrl_hb} #Con
 
 #anti-IgM
 ATAC_IgM="path to your extended ATAC-seq peaks (BED format) in anti-IgM 060 min condition made by peak_call_for_bulk.sh and Extend_bulk_ATAC_peaks.R"
-RelA_IgM="path to your RelA ChIP-seq peaks (BED format) in anti-IgM 060 min condition made by peak_call_bulk.sh"
+RelA_IgM="path to your RelA ChIP-seq peaks (BED format) in anti-IgM 060 min condition made by Peak_call_bulk.sh"
 
 ATAC_in_Enhancer_IgM="path to output of below command"
 intersectBed -a ${Enhancer} -b ${ATAC_IgM} > ${ATAC_in_Enhancer_IgM} #Get ATAC-seq peaks in enhancer region

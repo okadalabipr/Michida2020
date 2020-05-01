@@ -2,7 +2,7 @@
 
 SE_BED="path to your BED file of SEs made through running Make_enhancer_catalog.sh"
 TE_BED="path to your BED file of TEs made through running Make_enhancer_catalog.sh"
-ATAC_bigwig="path to your bigiwig file made by make_bigwig.sh"
+ATAC_bigwig="path to your bigiwig file made by Make_bigwig.sh"
 
 compute_matrix_object="path to output object of computeMatrix (deepTools) (.gz)"
 

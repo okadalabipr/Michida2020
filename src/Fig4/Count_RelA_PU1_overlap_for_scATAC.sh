@@ -4,7 +4,7 @@
 
 cd dir_scATAC/peakcall
 
-RelA_ctrl="path to your RelA ChIP-seq peaks in anti-IgM 000 min condition (BED format) obtained by peak_call_for_bulk.sh"
+RelA_ctrl="path to your RelA ChIP-seq peaks in anti-IgM 000 min condition (BED format) obtained by Peak_call_for_bulk.sh"
 
 dirs=`find * -type d`
 
