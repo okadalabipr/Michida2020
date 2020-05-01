@@ -2,7 +2,7 @@
 
 ## This repository is under construction. 
 
-![](./data/ojigi_animal_neko.png)
+![](./image/ojigi_animal_neko.png)
 
 ## Author
 - Hiroki Michida
