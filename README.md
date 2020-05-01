@@ -8,7 +8,7 @@ These source codes performs the integrative sequence analysis. We hope our these
 
 ## Usage  
 
-First, please refer the table below and check the source codes which are used for figures you want to make. Then, please refer the files dependecy map and run all source codes on which the source codes to make the figures depend. The sequence data is provided at  DDBJ: DRA009412 (ATAC-seq, ChIP-seq of RelA and H3K27Ac and single-cell RNA-seq.) and DRA009931 (single-cell ATAC-seq). Please specify file path in the source codes as we described in them.
+First, please refer the table below and check the source codes which are used for figures you want to make. Then, please refer the files dependecy map and run all source codes on which the source codes to make the figures depend. The sequence data will be provided at  DDBJ: DRA009412 (ATAC-seq, ChIP-seq of RelA and H3K27Ac and single-cell RNA-seq.) and DRA009931 (single-cell ATAC-seq). Sorry, now it is not availabe. Comming soon! Please specify file path in the source codes as we described in them.
 
 |Figures in the paper|Used source codes to plot|
 |:--:|:--:|
