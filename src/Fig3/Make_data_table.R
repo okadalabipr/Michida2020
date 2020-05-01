@@ -3,7 +3,7 @@ library(scde)
 library(tidyverse)
 
 #Import gene counts data and conduct the same cleaning as SCDE.R did--------------------------------------------------
-inputff <- read.table("path to your count data obtained with featureCounts", header=T, stringsAsFactors=F,sep="\t")
+inputff <- read.table("path to your count data obtained by featureCounts.sh", header=T, stringsAsFactors=F,sep="\t")
 rownames(inputff) <- inputff$Geneid
 
 ref = c("RamDA_00000",
