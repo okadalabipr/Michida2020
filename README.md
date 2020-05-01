@@ -47,7 +47,7 @@ First, please refer the table below and check the source codes which are used fo
 
 ## The files dependency map (under construction)  
 
-You may think this map is messy, but this is the  __integrative sequence analysis__. These source codes connect interactively each other.
+You may think this map is messy, but this is the  __integrative sequence analysis__. These source codes connect interactively each other. The arrows from hub source codes are colored just for easily understanding. This dose not indicate that colored source codes are important.
 
 ![](./image/Files_dependency_map.png)
 
