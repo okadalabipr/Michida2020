@@ -6,7 +6,7 @@
 
 ## The files dependency map (under construction)
 
-![](./image/File_dependency_map.png)
+![](./image/Files_dependency_map.png)
 
 ## Author
 - Hiroki Michida
