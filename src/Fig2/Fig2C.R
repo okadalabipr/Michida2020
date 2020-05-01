@@ -5,7 +5,7 @@ RNA_seq <- read.csv("path to your RamDA.csv obtained with SCDE.R",stringsAsFacto
 
 colnames(RNA_seq)[1] <- "gene"
 
-assigned <- read.csv("path to your SE_TE_3classified_assigned.csv obtained with gene_assignment.R", 
+assigned <- read.csv("path to your SE_TE_3classified_assigned.csv obtained with Gene_assignment.R", 
                      stringsAsFactors = F)
 
 assigned$RelA_mean <- (assigned$RelA_0H + assigned$RelA_1H)/2
