@@ -12,7 +12,7 @@ We hope our these source codes contribute your work about enhancers regulation, 
 
 Please refer to the table below for the source code needed for reproduction of figures. To run the source codes, it is required to run the dependencies available on the files dependency map.
 
-Sequence data is available from DDBJ: DDBJ: DRA009412 (ATAC-seq, ChIP-seq of RelA and H3K27Ac and single-cell RNA-seq.) and DRA009931 (single-cell ATAC-seq) after the publication.
+Sequence data is available from DDBJ: DRA009412 (ATAC-seq, ChIP-seq of RelA and H3K27Ac and single-cell RNA-seq.) and DRA009931 (single-cell ATAC-seq) after the publication.
 
 | Figures in the paper | Used source codes to plot |
 | :------------------: | :-----------------------: |
