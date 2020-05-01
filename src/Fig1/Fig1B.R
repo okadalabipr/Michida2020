@@ -23,4 +23,4 @@ plot(v, col = c("deeppink", "deepskyblue2", alpha = 0.5))
 
 dev.off()
 
-#Obtained figures were changed their aspect ration in the same ratio by PowerPoint (MicroSoft).
+#Obtained figures were changed their aspect ratio in the same ratio by PowerPoint (MicroSoft).
