@@ -347,7 +347,7 @@ TE_with <- get_param(TE_with_overlap);TE_with[[1]]
 TE_without <- get_param(TE_without_overlap);TE_without[[1]]
 
 get_sim <- function(fit_res,iro){
-  x   = c(0, 23.5, 30.9, 44, 100) # NF-kB activity from Shinohara Science 2014
+  x   = c(0, 23.5, 30.9, 44, 100) # NF-kB activity from Shinohara et al., 2014, Science
   xx  = seq(0, 100, length.out = 1000)
   df1 = data.frame(x=x, v=fit_res[[2]], sd = fit_res[[3]])
   df2 = data.frame(x=xx, v=model(as.numeric(fit_res[[1]]),xx))
