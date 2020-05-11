@@ -1,62 +1,93 @@
-# Michida et al., 2020
+# Michida et al., 2020 <br>The number of transcription factors at an enhancer determines switch-like gene expression (To appear)
+
 
 ## Introduction
 
-This repository contains source codes used in our paper, Michida et al., 2020. This paper is in press, thus details will be updated after publication.
+This repository contains the source code for the sequence analysis used in the above paper. 
 
-These source codes were used to perform integrative sequence analysis.
+Relative paths under “src” are shown.
 
-We hope our these source codes contribute your work about enhancers regulation, chromatin dynamics and so on.
+### ATAC sequencing and genomic alignment
 
-## Usage  
+- Primary_analysis/ATAC-seq_mapping.sh
 
-Please refer to the table below for the source code needed for reproduction of figures. To run the source codes, it is required to run the dependencies available on the files dependency map.
+### ChIP sequencing and genomic alignment
 
-Sequence data is available from DDBJ: DRA009412 (ATAC-seq, ChIP-seq of RelA and H3K27Ac and single-cell RNA-seq.) and DRA009931 (single-cell ATAC-seq) after the publication.
+- Primary_analysis/ChIP-seq_mapping.sh
 
-| Figures in the paper | Used source codes to plot |
-| :------------------: | :-----------------------: |
-|        Fig.1A        |          Fig1A.R          |
-|        Fig.1B        |          Fig1B.R          |
-|     Fig.1C, E-H      |        Fig1C_E-H.R        |
-|        Fig.1D        |          Fig1D.R          |
-|       Fig.2A-B       |         Fig2A-B.R         |
-|        Fig.2C        |          Fig2C.R          |
-|        Fig.3A        |          By hand          |
-|       Fig.3B,D       |         Fig3B_D.R         |
-|        Fig.3C        |          By hand          |
-|        Fig.3E        |  Parameter_estimation.py  |
-|        Fig.3F        |         Fig3F.py          |
-|       Fig.4A-D       |        Fig4A-D.sh         |
-|        Fig.4E        |          Fig4E.R          |
-|       Fig.5A-E       |         Fig5A-E.R         |
-|        Fig.6A        |          By hand          |
-|        Fig.6B        |          Fig6B.R          |
-|       SFig.1A        |         SFig1A.R          |
-|       SFig.1B        |         SFig1B.R          |
-|       SFig.1C        |        Fig1C_E-H.R        |
-|       SFig.1D        |         SFig1D.R          |
-|        SFig.2        |         SFig2.sh          |
-|       SFig.3A        |        Fig1C_E-H.R        |
-|       SFig.3B        |         Fig2A-B.R         |
-|       SFig.4A        |         Fig3B_D.R         |
-|      SFig.4C-D       |     Gene_assignment.R     |
-|       SFig.5A        |         Fig3B_D.R         |
-|       SFig.5B        |         SFig5B.R          |
-|      SFig.5C-F       |        Fig4A-D.sh         |
-|       SFig.6A        |         SFig6A.R          |
-|       SFig.6B        |         Fig5A-E.R         |
-|       SFig.6C        |         SFig6C.R          |
+### Single cell RNA sequencing and genomic alignment
 
-## The files dependency map
+- Primary_analysis/scRNA-seq_mapping.sh
+- Primary_analysis/featureCounts.sh
+- Fig2/SCDE.R
 
-The file dependency map below describes how the source codes connect with each other. The arrows were colored coded for easier visibility and does not indicate importance.
+### Identification of SEs and TEs 
 
-![](./image/Files_dependency_map.png)
+- Primary_analysis/Call_SE_TE.sh
+- Fig1/Fig1A.R
+- Fig1/Get_venn_num.sh
+- Fig1/Fig1B.R
+- Primary_analysis/Make_enhancer_catalog.sh
+- Fig1/Fig1D.R
 
-## Author
+### ATAC-seq coverage in SEs and TEs
 
-- Hiroki Michida
+- Sup_figs/SFig1D.sh
+- Sup_figs/SFig1D.R
+
+### Quantification of ChIP and ATAC signals in enhancer and proximal TSS regions 
+
+- Primary_analysis/Make_bigwig.sh
+- Primary_analysis/multiBigwigSummary.sh
+- Fig1/Fig1C_E-H.R
+
+### Gene assignment to enhancers 
+
+- Fig2/Gene_assignment.R
+
+### Identification of RelA binding numbers from sequence data
+
+- Primary_analysis/Peak_call_for_bulk.sh
+- Fig3/Extend_bulk_ATAC_peaks.R
+- Fig3/Get_RelA_peaks_in_ATAC_peaks.sh
+- Fig3/RelA_peak_motif_count.R
+
+### Motif analysis 
+
+- Fig4/Fig4A-D.sh
+- Fig4/Fig4E.R
+
+### Identification of NF-κB and PU.1 motifs
+
+- Fig4/Peak_call_for_scATAC.sh
+- Fig4/Extend_sc-ATAC_peaks.R
+- Fig4/intersectBed_get_PU1_position_for_scATAC.sh
+- Fig4/Count_RelA_PU1_overlap_for_scATAC.sh
+- Fig4/Fig4E.R
+- Fig5/Get_PU1_motifs_in_enhancers.sh
+- Fig5/Get_RelA_PU1_overlap.sh
+- Fig3/Get_NFkB_motifs_in_enhancers.sh
+- Fig3/RelA_peak_motif_count.R
+- Sup_figs/SFig6A.R
+
+### Gene Ontology (GO) analysis 
+
+- Sup_figs/SFig1A.R
+
+### Mathematical modeling 
+
+- Fig3/Filtering_genes.R
+- Fig3/Fig3B_D.R
+- Sup_figs/SFig5B.R
+- Fig5/Fig5A-E.R
+
+### Prediction of single cell mRNA distribution using a mathematical model 
+
+- Fig3/Parameter_estimation.py
+
+## Authors
+
+Hiroki Michida and Hiroaki Imoto
 
 ## License
 
