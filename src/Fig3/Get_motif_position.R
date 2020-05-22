@@ -1,7 +1,7 @@
 library(tidyverse)
 library(ggplot2)
 
-motif_tbl <- read.table("path to your findMotigsGenome.pl output file of Get_NFkB_motifs_in_enhancers.sh",
+motif_tbl <- read.table("path to your findMotifsGenome.pl output file of Get_NFkB_motifs_in_enhancers.sh",
                         header=T, stringsAsFactors=F, sep="\t")
 
 peak_tbl <- read.table("path to HOMER BED file used as the motif search region in findMotifsGenome.pl 

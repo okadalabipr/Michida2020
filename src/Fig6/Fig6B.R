@@ -11,7 +11,7 @@ parm_TE <- c(262.284020468864,	1.28724329750798,	2.01829647337324,	10.4313326529
 #NFkB <- rnorm(1000, mean = 50, sd = 10) #Make hypothetical single cell nuclear NFkB distribution
 
 NFkB <- readRDS("hypo_NFkB.obj")#Read hypothetical single cell nuclear NFkB distribution used in this paper
-                                #"hypo_NFkB.obj" is provided in our repository.
+                                #"hypo_NFkB.obj" is provided in /data in our repository.
 
 #Estimated mRNA distribution
 df <- data.frame(value = c(model(parm_SE,NFkB),model(parm_TE,NFkB)),

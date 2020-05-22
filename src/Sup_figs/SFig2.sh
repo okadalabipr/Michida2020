@@ -1,3 +1,5 @@
+#!/bin/bash
+
 bam="path to your ChIP-seq bam file you are converting into TDF format"
 tdf="path to output of this command"
 

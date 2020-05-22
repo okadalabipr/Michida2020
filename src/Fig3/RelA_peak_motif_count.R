@@ -1,7 +1,7 @@
 library(tidyverse)
 
 #If you are counting RelA ChIP-seq peaks
-peaks <- as.data.frame(read.table("path to your RelA peaks in ATAC peaks obtained using Get_peaks_in_ATAC_peaks.sh")[,1:3])
+peaks <- as.data.frame(read.table("path to your RelA peaks in ATAC peaks obtained using Get_RelA_peaks_in_ATAC_peaks.sh")[,1:3])
 #If you are counting NFkB motifs
 peaks <- as.data.frame(read.table("path to your NFkB motifs in ATAC peaks obtained using Get_NFkB_motifs_in_enhancers.sh and Get_motif_position.R")[,1:3])
 
@@ -30,7 +30,7 @@ for (c in chr){
 }
 
 #DO NOT execute if you are counting NFkB motifs!!!!
-SE_sg <- dplyr::filter(SE_sg, peak_num > 0) #Discard peaks which doesn't have RelA peaks.
+SE_sg <- dplyr::filter(SE_sg, peak_num > 0) #Discard peaks which don't have RelA peaks.
 
 #Count peaks in signal-gained TE-------------------------------------------------------------------------------------
 TE_sg <- NULL
@@ -50,7 +50,7 @@ for (c in chr){
 
 
 #DO NOT execute if you are counting NFkB motifs!!!!
-TE_sg <- dplyr::filter(TE_sg, peak_num > 0) #Discard peaks which doesn't have RelA peaks.
+TE_sg <- dplyr::filter(TE_sg, peak_num > 0) #Discard peaks which don't have RelA peaks.
 
 #Extract enhancers whose target genes' expression data exist in RNA-seq data-------------------------------------
 #signal-gained SE
@@ -95,4 +95,3 @@ df_TE_sg <- dplyr::left_join(TE_sg,RamDA_TE_sg,by = "gene")
 write.csv(df_TE_sg,"TE_sg_peak_count.csv",row.names = F) #This file is required in downstream analysis.
 #If you counted NFkB motifs
 write.csv(df_TE_sg,"TE_sg_motif_count.csv",row.names = F) #This file is required in downstream analysis.
-

@@ -1,4 +1,4 @@
-# Michida et al., 2020 <br>The number of transcription factors at an enhancer determines switch-like gene expression (To appear)
+# Michida et al., 2020 <br>The number of transcription factors at an enhancer determines switch-like gene expression
 
 
 ## Introduction

@@ -2,7 +2,7 @@
 
 SE="path to your SE catalog made by Make_enhancer_catalog.sh"
 TE="path to your TE catalog made by Make_enhancer_catalog.sh"
-motif="path to your PU.1 motif file. In this paper, PU1_homer.motif provided in this repository was used."
+motif="path to your PU.1 motif file. In this paper, PU1_homer.motif provided in /data of this repository was used."
 
 cd dir_scATAC/peakcall
 
@@ -20,6 +20,5 @@ for d in ${dirs};do
     mv motifFindingParameters.txt SE_motifFindingParameters.txt
     findMotifsGenome.pl ${d}_ATAC_in_TE.hb mm10 ./ -find ${motif} > ${d}_PU1_in_ATAC_in_TE.txt
     mv motifFindingParameters.txt TE_motifFindingParameters.txt
-    
     cd ..
 done

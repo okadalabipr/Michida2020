@@ -236,7 +236,6 @@ for(i in 5:22){
 pvalue_df <- data.frame(p = c(SE_mean,TE_mean),sn = c(5:22,5:22),
                         label = c(rep("SE",18),rep("TE",18)),error = c(SE_sd,TE_sd))
 
-pvalue_df$p <- pvalue_df$p
 
 
 p <- ggplot(pvalue_df,aes(x = sn,y = p,color = label))+                        
@@ -293,7 +292,6 @@ for(i in 5:22){
 pvalue_df <- data.frame(p = c(SE_mean,TE_mean),sn = c(5:22,5:22),
                         label = c(rep("SE",18),rep("TE",18)),error = c(SE_sd,TE_sd))
 
-pvalue_df$p <- pvalue_df$p
 
 
 p <- ggplot(pvalue_df,aes(x = sn,y = p,color = label))+                        
@@ -316,9 +314,3 @@ p <- ggplot(pvalue_df,aes(x = sn,y = p,color = label))+
 
 
 plot(p)
-
-#I'm sorry for a bit messy source code...
-
-
-
-

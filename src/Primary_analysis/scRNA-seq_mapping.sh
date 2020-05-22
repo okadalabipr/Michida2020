@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#Please change the file names you like.
-
 index="path to your mm10 index made by STAR"
 save_dir="path to your directory where you want to save all files"
 R1="path to your read 1 fastq file you want to map"

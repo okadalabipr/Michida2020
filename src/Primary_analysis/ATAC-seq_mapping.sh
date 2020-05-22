@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#Specify read 1 and read 2 fastq files you want to process with this script at the first argument and the second argument respectively.
-#Please change the file names you like.
+#Specify read 1 and read 2 fastq files you want to process with this script at the first and the second arguments respectively.
 #Both bulk and single-cell ATAC-seq fastq files were processed by this script in the paper.
 
 index="path to your mm10 index made by bowtie2"
@@ -25,13 +24,15 @@ samtools view -@ 4 -bS ${save_dir}/mapped.sam -o ${save_dir}/mapped.bam
 samtools sort -@ 4 ${save_dir}/mapped.bam -o ${save_dir}/mapped_sorted.bam
 
 #Remove duplicates with picard
+#Please change the output file names for each fastq.
 picard MarkDuplicates I=${save_dir}/mapped_sorted.bam O=${save_dir}/mapped_sorted_rm_dups.bam M=${save_dir}/report.txt REMOVE_DUPLICATES=true
 
 #Extract signle mapped reads with samtools (This command was not run in single-cell ATAC-seq processing.)
+#Please change the output file name for each fastq.
 samtools view -@ 4 -b -q 30 ${save_dir}/mapped_sorted_rm_dups.bam > ${save_dir}/all_done.bam
 
 #Make index
-samtools index -@ 4 ${save_dir}/all_done.bam
+samtools index -@ 4 ${save_dir}/all_done.bam #Please change this file name for each fastq.
 
 #Remove intermediate files
 rm -rf ${save_dir}/unpaired_R1.fastq ${save_dir}/unpaired_R2.fastq ${save_dir}/mapped.sam \

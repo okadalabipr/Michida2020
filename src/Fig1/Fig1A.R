@@ -24,7 +24,7 @@ df$type <- c(rep("SE",nrow(SE)),rep("TE",nrow(TE)))
 df_anno <- rbind(SE_anno,TE_anno)
 
 
-#Assign labels to the peak whose rank is the highest among the peaks assinged to the same gene.
+#Assign the following gene names with the corresponding enhancers.
 selected_genes = c("Irf4", "Tnfaip3", "Cd83", "Cr2", "Nfkbia","Cd44", "Rel")
 
 selected_row <- c()
@@ -45,7 +45,6 @@ g <- ggplot(df, aes(x = rank, y = Normalized_Tag_Count/10, color = type, label =
   ylab("H3K27Ac ChIP signal (rpm)")+
   scale_x_reverse(limits = c(4500,1), breaks = c(seq(4000,1000,-1000),1))+
   scale_color_manual(values =c("firebrick2","royalblue2"))+
-  labs(color = "Enhancer type")+
   geom_text_repel(na.rm = TRUE, size = 7.0, nudge_x = -2000, nudge_y = 200, max.iter = 2000,segment.alpha = 0.5)+
   guides(color = F)+
   theme(axis.text.x = element_text(size=20),axis.text.y = element_text(size=15))+

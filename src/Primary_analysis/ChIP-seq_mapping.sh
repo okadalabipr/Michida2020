@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #Specify raw fastq file you want to process with this script at the first argument.
-#Please change the file names you like.
 
 index="path to your mm10 index made by bowtie"
 adapter="path to your Trimmomatic/adapters/TruSeq2-SE.fa"
@@ -22,11 +21,12 @@ samtools sort -@ 4 ${save_dir}/mapped.bam -o ${save_dir}/mapped_sorted.bam
 #Remove unmapped reads with samtools
 samtools view -@ 4 -b -F 4 ${save_dir}/mapped_sorted.bam > ${save_dir}/mapped_sorted_rm_unmapped.bam
 
-#Remove duplicates with picard
+#Remove duplicates with picard 
+#Please change the output file names for each fastq.
 picard MarkDuplicates I=${save_dir}/mapped_sorted_rm_unmapped.bam O=${save_dir}/all_done.bam M=${save_dir}/report.txt REMOVE_DUPLICATES=true
 
 #Make index
-samtools index -@ 4 ${save_dir}/all_done.bam
+samtools index -@ 4 ${save_dir}/all_done.bam #Please change this file name for each fastq.
 
 #Remove intermediate files
 rm -rf ${save_dir}/mapped.sam ${save_dir}/mapped.bam ${save_dir}/mapped_sorted.bam ${save_dir}/mapped_sorted_rm_unmapped.bam

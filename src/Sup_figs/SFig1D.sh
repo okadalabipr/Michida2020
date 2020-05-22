@@ -18,7 +18,7 @@ computeMatrix scale-regions -p 4 -m 10000 \
 -out ${compute_matrix_object}
 
 PDF="path to output figure pdf"
-TXT="path to output text, in this paper, SFig.1D was plotted using this text file by SFig1D.sh"
+TXT="path to output text, in this paper, SFig.1D was plotted using this text file by SFig1D.R"
 
 plotProfile -m ${compute_matrix_object} \
 --plotType=se --averageType mean \

@@ -7,10 +7,9 @@ filtered_Gained_TE_bed="BED file of filtered gained TEs will be made in this scr
 extended_bulk_ATAC_peak_IgM="path to your extended bulk ATAC-seq peaks in anti-IgM 060 min made by Extend_bulk_ATAC_peaks.R"
 
 #Make BED file of filtered gained SEs
-sed -E "s/,/\t/g" ${filtered_Gained_SE_csv} | sed '1d' | sed -E "s/\"//g" | awk -v 'OFS=\t' '{print $2, $3, $4}' > ${filtered_Gained_SE_bed} #This command may be required to change depending on your data handling.
-
+sed -E "s/,/\t/g" ${filtered_Gained_SE_csv} | sed '1d' | sed -E "s/\"//g" | awk -v 'OFS=\t' '{print $2, $3, $4}' > ${filtered_Gained_SE_bed} 
 #Make BED file of filtered gained TEs
-sed -E "s/,/\t/g" ${filtered_Gained_TE_csv} | sed '1d' | sed -E "s/\"//g" | awk -v 'OFS=\t' '{print $2, $3, $4}' > ${filtered_Gained_TE_bed} #This command may be required to change depending on your data handling.
+sed -E "s/,/\t/g" ${filtered_Gained_TE_csv} | sed '1d' | sed -E "s/\"//g" | awk -v 'OFS=\t' '{print $2, $3, $4}' > ${filtered_Gained_TE_bed}
 
 #Get ATAC peaks in gained SEs and TEs in anti-IgM 060 min.
 ATAC_in_Gained_SE="path to output file of below command"
@@ -33,4 +32,4 @@ findMotifsGenome.pl ${ATAC_in_Gained_SE_hb} mm10 ./ -find PU1_homer.motif > ${PU
 PU1_in_ATAC_in_TE_IgM="path to output file of below command"
 findMotifsGenome.pl ${ATAC_in_Gained_TE_hb} mm10 ./ -find PU1_homer.motif > ${PU1_in_ATAC_in_TE_IgM}
 
-#In this paper, PU.1 motifs in HOMER was used. PU1_homer.motif is provided in our repository.
+#In this paper, PU.1 motifs in HOMER was used. PU1_homer.motif is provided in /data of our repository.

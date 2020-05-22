@@ -45,7 +45,7 @@ colnames(par_df) <- c("Km", "K1", "K2")
 df <- cbind(df,par_df)
 
 
-plot_SFig5B <- function(gene_name,iro){
+plot_SFig4D <- function(gene_name,iro){
   row_n <- which(df$gene == gene_name)
   plot_model <- function(parS, sim_x) (sim_x^df$peak_num[row_n] / (sim_x^df$peak_num[row_n] + parS[2]*(parS[1]^df$peak_num[row_n]+sim_x^df$peak_num[row_n])))*parS[3]
   
@@ -62,20 +62,19 @@ plot_SFig5B <- function(gene_name,iro){
   
   g = g + geom_point(data = df1, aes(x = x, y = v),color = iro,size = 6)+
     theme_classic()+
-    labs(x = "Nuclear NFkB level (A.U.)", y = "Fold change in mRNA level")+
+    labs(x = "Nuclear NFkB level (A.U.)", y = "Fold change in mRNA level - 1")+
     theme(axis.text.x = element_text(size = 20),axis.text.y = element_text(size=20))+
     theme(axis.title.x = element_text(size = 20),axis.title.y = element_text(size=20))+
     theme(panel.grid = element_blank(), strip.background = element_blank(),strip.text = element_blank())+
     theme(panel.background = element_rect(fill = "white", colour = "black", size = 2.0))
   
   plot(g)
-  
 }
 
 #Plot the graphs
-plot_SFig5B("Irf4", "firebrick3")
-plot_SFig5B("Smad3", "firebrick3")
-plot_SFig5B("Fam43a", "firebrick3")
-plot_SFig5B("Rela", "royalblue")
-plot_SFig5B("Ran", "royalblue")
-plot_SFig5B("Eif3d", "royalblue")
+plot_SFig4D("Irf4", "firebrick3")
+plot_SFig4D("Smad3", "firebrick3")
+plot_SFig4D("Fam43a", "firebrick3")
+plot_SFig4D("Rela", "royalblue")
+plot_SFig4D("Ran", "royalblue")
+plot_SFig4D("Eif3d", "royalblue")

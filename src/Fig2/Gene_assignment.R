@@ -12,8 +12,8 @@ tss$Mean_ATAC = (tss$ATAC_0h + tss$ATAC_1h)/2
 
 tss = tss[which(!is.na(tss$H3K27Ac_FC) & is.finite(tss$H3K27Ac_FC) & !is.na(tss$ATAC_FC) & is.finite(tss$ATAC_FC)),]
 
-#SFig.4C-D-------------------------------------------------------------------------------------------------
-#SFig.4c
+#SFig.3D-E-------------------------------------------------------------------------------------------------
+#SFig.3D
 g <- ggplot(tss,aes(x = log10(Mean_H3K27Ac)))+
   geom_histogram(bins = 100)+
   theme_bw()+
@@ -28,7 +28,7 @@ g <- ggplot(tss,aes(x = log10(Mean_H3K27Ac)))+
 
 plot(g)
 
-#SFig.4D
+#SFig.3E
 g <- ggplot(tss,aes(x = log10(Mean_ATAC)))+
   geom_histogram(bins = 100)+
   theme_bw()+

@@ -98,7 +98,7 @@ df <- rbind(SE_sg, TE_sg)
 skipped <- c()
 Nopt <- c()
 for(i in 1:nrow(df)){
-  obs = as.numeric(df[i,25:28]-1) #25:28 specifies FC_0.01 ~ FC_10 This number may need to be changed.
+  obs = as.numeric(df[i,25:28]-1) #25:28 specifies FC_0.01 ~ FC_10.
   obs = append(0,obs)
   resid = function(p) sum((obs-model(p,exp_x))^2)
   opt = try(optimx(par = parStart, fn = resid,control=list(all.methods = T), 

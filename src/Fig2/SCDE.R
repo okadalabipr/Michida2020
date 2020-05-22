@@ -1,4 +1,3 @@
-#I'm sorry for this very messy source code...
 library(scde)
 inputff <- read.table("path to your count data obtained with featureCounts", header=T, stringsAsFactors=F,sep="\t")
 rownames(inputff) <- inputff$Geneid

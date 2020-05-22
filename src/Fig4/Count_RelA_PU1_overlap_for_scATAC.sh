@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Please redirect output of this script like bash Count_RelA_PU1_overlap_for_scATAC.sh > overlap_count_scATAC.txt
+#Please redirect output of this script like "bash Count_RelA_PU1_overlap_for_scATAC.sh > overlap_count_scATAC.txt"
 
 cd dir_scATAC/peakcall
 

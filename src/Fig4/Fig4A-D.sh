@@ -41,11 +41,11 @@ findMotifsgenome.pl ${RelA_ATAC_in_Enhancer_ctrl_hb} mm10 ${RelA_in_ATAC_in_Enha
 RelA_in_ATAC_in_Enhancer_IgM_dir="path to output directory of below command"
 findMotifsgenome.pl ${RelA_ATAC_in_Enhancer_IgM_hb} mm10 ${RelA_in_ATAC_in_Enhancer_IgM_dir} -size given -bg ${RelA_ATAC_in_Enhancer_ctrl_hb} -p 4 #Fig.4B,D
 
-#findMotifsGenome.pl for SFig.5C-F
+#findMotifsGenome.pl for SFig.5A-D
 ATAC_in_Enhancer_ctrl_dir="path to output directory of below command"
-findMotifsgenome.pl ${ATAC_in_Enhancer_ctrl_hb} mm10 ${ATAC_in_Enhancer_ctrl_dir} -size given -bg ${ATAC_in_Enhancer_IgM_hb} -p 4 #SFig.5C,E
+findMotifsgenome.pl ${ATAC_in_Enhancer_ctrl_hb} mm10 ${ATAC_in_Enhancer_ctrl_dir} -size given -bg ${ATAC_in_Enhancer_IgM_hb} -p 4 #SFig.5A,C
 
 ATAC_in_Enhancer_IgM_dir="path to output directory of below command"
-findMotifsgenome.pl ${ATAC_in_Enhancer_IgM_hb} mm10 ${ATAC_in_Enhancer_IgM_dir} -size given -bg ${ATAC_in_Enhancer_ctrl_hb} -p 4 #SFig.5D,F
+findMotifsgenome.pl ${ATAC_in_Enhancer_IgM_hb} mm10 ${ATAC_in_Enhancer_IgM_dir} -size given -bg ${ATAC_in_Enhancer_ctrl_hb} -p 4 #SFig.5B,D
 
 #Figures were made from knownResults.html

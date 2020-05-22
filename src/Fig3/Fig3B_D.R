@@ -115,7 +115,7 @@ g = ggplot(df2_SE, aes(x = x, y = v))+
 
 g = g + 
   geom_point(data = df1_SE, aes(x = x, y = v), color = "firebrick3", size = 6)+
-  #You can plot SFig.5A canceling the comment out below.
+  #You can plot SFig.4C canceling the comment out below.
   #geom_errorbar(data = df1_SE, aes(ymin = v - sd, ymax = v + sd),width = 3,color = "firebrick3",alpha=0.5,size=1)+
   theme_bw()
 
@@ -123,7 +123,7 @@ g = g + geom_line(data = df2_TE, aes(x = x, y = v), color = "royalblue", size = 
 
 g = g + 
   geom_point(data = df1_TE, aes(x = x, y = v),color = "royalblue", size = 6)+
-  #You can plot SFig.5A canceling the comment out below.
+  #You can plot SFig.4C canceling the comment out below.
   #geom_errorbar(data = df1_TE, aes(ymin = v - sd, ymax = v + sd),width = 3,color = "royalblue",alpha=0.5,size=1)+
   theme_bw()+
   xlab("Nuclear NFkB level (A.U.)")+

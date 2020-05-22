@@ -42,7 +42,7 @@ assign <- function(peak){
   return(genes)
 }
 
-#When you ran Get_venn_num.sh, you got peak files of each venn region made by mergepeaks. 
+#When you ran Get_venn_num.sh, you got peak files of each venn region made by mergePeaks. 
 #Please specify the path of them here in this order.
 files <- c("anti-IgM 000 min unique superEnhancers",
            "Sheared superEnhancers",
@@ -116,7 +116,7 @@ p <- ggplot(plot_df, aes(x=L, lower=X2, upper=X4, middle=X3, ymin=X1, ymax=X5, f
   theme(legend.position = "none")+
   #scale_fill_manual(values = c("firebrick3","royalblue") ) +
   #scale_y_continuous(limits=c(0,15), breaks=seq(0,15,5))+
-  labs(x="", y="FC anti-IgM 0 ƒÊg/ml to 10 ƒÊg/ml")+
+  labs(x="", y="FC anti-IgM 0 ï¿½ï¿½g/ml to 10 ï¿½ï¿½g/ml")+
   geom_errorbar(width=0.5)+
   theme(axis.text.x = element_text(size = 20))+
   theme(axis.text.y = element_text(size = 20))+
