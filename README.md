@@ -78,7 +78,7 @@ Relative paths under “src” are shown.
 
 - Fig3/Filtering_genes.R
 - Fig3/Fig3B_D.R
-- Sup_figs/SFig5B.R
+- Sup_figs/SFig4D.R
 - Fig5/Fig5A-E.R
 
 ### Prediction of single cell mRNA distribution using a mathematical model 
