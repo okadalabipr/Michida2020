@@ -1,5 +1,5 @@
 # Michida et al., 2020 <br>The number of transcription factors at an enhancer determines switch-like gene expression  
-[![DOI](https://j.celrep.org/badge/DOI/10.1016/j.celrep.2020.107724.svg)](https://www.cell.com/cell-reports/fulltext/S2211-1247(20)30701-4)
+[![DOI](https://zenodo.org/badge/DOI/10.1016/j.celrep.2020.107724.svg)](https://www.cell.com/cell-reports/fulltext/S2211-1247(20)30701-4)
 
 ## Introduction
 
